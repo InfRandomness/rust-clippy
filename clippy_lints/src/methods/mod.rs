@@ -2146,7 +2146,7 @@ declare_clippy_lint! {
     /// ```
     #[clippy::version = "1.61.0"]
     pub OPTION_TAKE_ON_TEMPORARY,
-    suspicious,
+    complexity,
     "default lint description"
 }
 
