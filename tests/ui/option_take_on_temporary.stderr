@@ -1,8 +1,8 @@
-error: Format test
-  --> $DIR/option_take_on_temporary.rs:4:13
+error: Called `Option::take()` on a temporary value
+  --> $DIR/option_take_on_temporary.rs:6:13
    |
 LL |     let y = x.as_ref().take();
-   |             ^^^^^^^^^^^^^^^^^
+   |             ^^^^^^^^^^^^^^^^^ help: try: `x.as_ref()`
    |
    = note: `-D clippy::option-take-on-temporary` implied by `-D warnings`
 
