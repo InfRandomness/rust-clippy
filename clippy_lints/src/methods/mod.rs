@@ -2147,7 +2147,7 @@ declare_clippy_lint! {
     #[clippy::version = "1.61.0"]
     pub OPTION_TAKE_ON_TEMPORARY,
     complexity,
-    "default lint description"
+    "using `.as_ref().take()` on a temporary value"
 }
 
 pub struct Methods {
