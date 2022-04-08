@@ -48,6 +48,7 @@ store.register_group(true, "clippy::complexity", Some("clippy_complexity"), vec!
     LintId::of(methods::NEEDLESS_SPLITN),
     LintId::of(methods::OPTION_AS_REF_DEREF),
     LintId::of(methods::OPTION_FILTER_MAP),
+    LintId::of(methods::OPTION_TAKE_ON_TEMPORARY),
     LintId::of(methods::OR_THEN_UNWRAP),
     LintId::of(methods::SEARCH_IS_SOME),
     LintId::of(methods::SKIP_WHILE_NEXT),
