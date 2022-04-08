@@ -327,6 +327,7 @@ store.register_lints(&[
     methods::OPTION_AS_REF_DEREF,
     methods::OPTION_FILTER_MAP,
     methods::OPTION_MAP_OR_NONE,
+    methods::OPTION_TAKE_ON_TEMPORARY,
     methods::OR_FUN_CALL,
     methods::OR_THEN_UNWRAP,
     methods::RESULT_MAP_OR_INTO_OPTION,

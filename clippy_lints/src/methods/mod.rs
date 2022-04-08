@@ -46,6 +46,7 @@ mod ok_expect;
 mod option_as_ref_deref;
 mod option_map_or_none;
 mod option_map_unwrap_or;
+mod option_take_on_temporary;
 mod or_fun_call;
 mod or_then_unwrap;
 mod search_is_some;
@@ -2131,6 +2132,24 @@ declare_clippy_lint! {
     "no-op use of `deref` or `deref_mut` method to `Option`."
 }
 
+declare_clippy_lint! {
+    ///
+    /// ### Why is this bad?
+    ///
+    /// ### Example
+    /// ```rust
+    /// // example code where clippy issues a warning
+    /// ```
+    /// Use instead:
+    /// ```rust
+    /// // example code which does not raise clippy warning
+    /// ```
+    #[clippy::version = "1.61.0"]
+    pub OPTION_TAKE_ON_TEMPORARY,
+    suspicious,
+    "default lint description"
+}
+
 pub struct Methods {
     avoid_breaking_exported_api: bool,
     msrv: Option<RustcVersion>,
@@ -2219,6 +2238,7 @@ impl_lint_pass!(Methods => [
     UNNECESSARY_JOIN,
     ERR_EXPECT,
     NEEDLESS_OPTION_AS_DEREF,
+    OPTION_TAKE_ON_TEMPORARY,
 ]);
 
 /// Extracts a method call name, args, and `Span` of the method name.
@@ -2595,6 +2615,7 @@ fn check_methods<'tcx>(cx: &LateContext<'tcx>, expr: &'tcx Expr<'_>, msrv: Optio
                     }
                 }
             },
+            ("take", []) => option_take_on_temporary::check(cx, expr, recv),
             ("to_os_string" | "to_owned" | "to_path_buf" | "to_vec", []) => {
                 implicit_clone::check(cx, name, expr, recv);
             },

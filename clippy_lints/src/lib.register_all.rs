@@ -188,6 +188,7 @@ store.register_group(true, "clippy::all", Some("clippy_all"), vec![
     LintId::of(methods::OPTION_AS_REF_DEREF),
     LintId::of(methods::OPTION_FILTER_MAP),
     LintId::of(methods::OPTION_MAP_OR_NONE),
+    LintId::of(methods::OPTION_TAKE_ON_TEMPORARY),
     LintId::of(methods::OR_FUN_CALL),
     LintId::of(methods::OR_THEN_UNWRAP),
     LintId::of(methods::RESULT_MAP_OR_INTO_OPTION),
