@@ -1,0 +1,10 @@
+error: Format test
+  --> $DIR/option_take_on_temporary.rs:4:13
+   |
+LL |     let y = x.as_ref().take();
+   |             ^^^^^^^^^^^^^^^^^
+   |
+   = note: `-D clippy::option-take-on-temporary` implied by `-D warnings`
+
+error: aborting due to previous error
+
